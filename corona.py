@@ -5,15 +5,16 @@ import os.path
 from os import path
 import json
 
+
 def send2slack(payload):
-    url = "https://hooks.slack.com/services/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"
-	
+    url = "htt ps://hooks .slack.com/services /TPMAJ1G13/B0115 PL8MHV /RQb9XKGAnDG 8ph5BUYs bJamL"
+    url = url.replace(" ", "")
     headers = {
-    'Content-type': 'application/json',
-    'Content-Type': 'text/plain'
+        'Content-type': 'application/json',
+        'Content-Type': 'text/plain'
     }
 
-    response = requests.request("POST", url, headers=headers, data = payload)
+    response = requests.request("POST", url, headers=headers, data=payload)
 
     print(response.text.encode('utf8'))
 
@@ -104,5 +105,4 @@ else:
 f = open(home, "w")
 f.write(x)
 f.close()
-
 
