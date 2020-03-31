@@ -6,9 +6,8 @@ from os import path
 import json
 
 def send2slack(payload):
-    url = "https://hooks.slack.com/services/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"
-
-    # payload = "{\n\t\"blocks\": [\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"text\": {\n\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\"text\": \"Updated Corona Stats in India:\\n*<https://www.mohfw.gov.in/|*As on 30 March 2020, 09.30 PM & District wise details awaited.>*\"\n\t\t\t}\n\t\t},\n\t\t{\n\t\t\t\"type\": \"section\",\n\t\t\t\"fields\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"*Total Cases:*\\n1251\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"*Active:*\\n1117\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"*Cured:*\\n101\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"*Death:*\\n32\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"*Migrated:*\\n1\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"mrkdwn\",\n\t\t\t\t\t\"text\": \"*Mortality:*\\n2.3%\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+    url = "https://hooks.slack.com/services/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"
+	
     headers = {
     'Content-type': 'application/json',
     'Content-Type': 'text/plain'
