@@ -7,8 +7,8 @@ import json
 
 
 def send2slack(payload):
-	# url = "htt ps://hooks .slack.com/services /TPMAJ1G13/B0115 PL8MHV /RQb9XKGAnDG 8ph5BUYs bJamL"
-	url = "h ttps://hooks.slack.com/services/TPMAJ1G13/BTBN6068H/eLdFSkT2ZgKcq8KYVBtJsRc B"
+	url = "htt ps://hooks .slack.com/services /TPMAJ1G13/B0115 PL8MHV /RQb9XKGAnDG 8ph5BUYs bJamL"
+	# url = "h ttps://hooks.slack.com/services/TPMAJ1G13/BTBN6068H/eLdFSkT2ZgKcq8KYVBtJsRc B"
 	url = url.replace(" ", "")
 	headers = {
 		'Content-type': 'application/json',
