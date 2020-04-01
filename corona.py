@@ -7,16 +7,17 @@ import json
 
 
 def send2slack(payload):
-    url = "htt ps://hooks .slack.com/services /TPMAJ1G13/B0115 PL8MHV /RQb9XKGAnDG 8ph5BUYs bJamL"
-    url = url.replace(" ", "")
-    headers = {
-        'Content-type': 'application/json',
-        'Content-Type': 'text/plain'
-    }
+	# url = "htt ps://hooks .slack.com/services /TPMAJ1G13/B0115 PL8MHV /RQb9XKGAnDG 8ph5BUYs bJamL"
+	url = "h ttps://hooks.slack.com/services/TPMAJ1G13/BTBN6068H/eLdFSkT2ZgKcq8KYVBtJsRc B"
+	url = url.replace(" ", "")
+	headers = {
+		'Content-type': 'application/json',
+		'Content-Type': 'text/plain'
+	}
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+	response = requests.request("POST", url, headers=headers, data=payload)
 
-    print(response.text.encode('utf8'))
+	print(response.text.encode('utf8'))
 
 
 URL = 'https://www.mohfw.gov.in/'
@@ -24,19 +25,26 @@ page = requests.get(URL)
 
 
 soup = BeautifulSoup(page.content, 'html.parser')
-results = soup.findAll("span", {"class": "icount"})
+results = soup.findAll("div", {"class": "site-stats-count"})[0].findAll('li')
 
-passenger = results[0].text
-active = int(results[1].text)
-cured = int(results[2].text)
-death = int(results[3].text)
-migrated = int(results[4].text)
+print(results[0].find("strong").text)
+print(results[1].find("strong").text)
+print(results[2].find("strong").text)
+print(results[3].find("strong").text)
+
+
+passenger = "nothing"
+active = int(results[0].find("strong").text)
+cured = int(results[1].find("strong").text)
+death = int(results[2].find("strong").text)
+migrated = int(results[3].find("strong").text)
 
 mortality = round((death / (active + cured + death + migrated)) * 100, 1)
 
 total = active + cured + death + migrated
-ason = soup.find("div", {"class": "information_block"}
-                 ).findNext('p').contents[0].text
+ason = soup.find("div", {"class": "status-update"}).findNext('span').text
+
+print(ason)
 
 
 x = """ {{ "data":{{ "passenger":"{0}", "active": {1}, "cured": {2}, "death": {3}, "migrated": {4}, "total": {5}, "ason": "{6}" }},
